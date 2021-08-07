@@ -1,0 +1,46 @@
+## SPDX-License-Identifier: GPL-2.0-or-later
+
+if BOARD_HP_800_G1_DM
+
+config BOARD_SPECIFIC_OPTIONS
+	def_bool y
+	select BOARD_ROMSIZE_KB_16384
+	select HAVE_ACPI_RESUME
+	select HAVE_ACPI_TABLES
+	select INTEL_INT15
+	#select HAVE_CMOS_DEFAULT
+	#select HAVE_OPTION_TABLE
+	select INTEL_GMA_HAVE_VBT
+	select MAINBOARD_HAS_LIBGFXINIT
+	select MAINBOARD_HAS_LPC_TPM
+	#select MAINBOARD_USES_IFD_GBE_REGION
+	select NORTHBRIDGE_INTEL_HASWELL
+	select SERIRQ_CONTINUOUS_MODE
+	select SOUTHBRIDGE_INTEL_LYNXPOINT
+	select SUPERIO_NUVOTON_NPCD378
+
+config CBFS_SIZE
+	hex
+	default 0x570000
+
+config MAINBOARD_DIR
+	string
+	default "hp/800_g1_dm"
+
+config MAINBOARD_PART_NUMBER
+	string
+	default "800 G1 DM"
+
+config VGA_BIOS_FILE
+	string
+	default "pci8086,0402.rom"
+
+config VGA_BIOS_ID
+	string
+	default "8086,0402"
+
+config USBDEBUG_HCD_INDEX # FIXME: check this
+	int
+	default 2
+
+endif

@@ -1,0 +1,2 @@
+config BOARD_HP_800_G1_DM
+	bool "800 G1 DM"
