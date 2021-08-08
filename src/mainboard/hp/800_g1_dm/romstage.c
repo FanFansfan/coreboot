@@ -19,10 +19,8 @@ void mainboard_config_rcba(void)
 
 void mb_get_spd_map(struct spd_info *spdi)
 {
-	spdi->addresses[0] = 0x50;
-	spdi->addresses[1] = 0x51;
-	spdi->addresses[2] = 0x52;
-	spdi->addresses[3] = 0x53;
+	spdi->addresses[2] = 0x50;
+	spdi->addresses[0] = 0x52;
 }
 
 const struct usb2_port_config mainboard_usb2_ports[MAX_USB2_PORTS] = {
